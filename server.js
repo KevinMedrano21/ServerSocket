@@ -22,6 +22,6 @@ server.on('connection', (socket) => {
     });
 });
 
-server.listen(process.env.PORT, () => {
+server.listen(process.env.PORT, process.env.HOST, () => {
     console.log('servidor escuchando en puerto', process.env.PORT);
 });
