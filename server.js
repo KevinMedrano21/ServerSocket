@@ -22,6 +22,6 @@ server.on('connection', (socket) => {
     });
 });
 
-server.listen(process.env.PORT, process.env.HOST || 'serversocket-y5i0.onrender.com', () => {
+server.listen(process.env.SERVER_PORT, process.env.SERVER_HOST, () => {
     console.log('servidor escuchando en puerto', process.env.PORT);
 });
