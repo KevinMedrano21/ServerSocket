@@ -1,6 +1,8 @@
 const net = require('net');
 const server = net.createServer();
 
+const PORT = process.env.PORT || 3000;
+
 let mensajes = [];
 
 server.on('connection', (socket) => {
@@ -22,6 +24,6 @@ server.on('connection', (socket) => {
     });
 });
 
-server.listen(3000, () => {
-    console.log('servidor escuchando en puerto', server.address().port);
+server.listen(PORT, () => {
+    console.log('servidor escuchando en puerto', PORT);
 });
