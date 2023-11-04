@@ -3,6 +3,10 @@ const server = net.createServer();
 
 let mensajes = [];
 
+// Establece el puerto y host del servidor directamente
+const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || 'serversocket-y5i0.onrender.com'; // Cambia 'localhost' al host correcto si es diferente
+
 server.on('connection', (socket) => {
     socket.on('data', (data) => {
         const mensaje = data.toString('utf-8');
@@ -22,6 +26,6 @@ server.on('connection', (socket) => {
     });
 });
 
-server.listen(process.env.PORT, () => {
-    console.log('servidor escuchando en puerto', process.env.PORT);
+server.listen(PORT, HOST, () => {
+    console.log('servidor escuchando en puerto', PORT);
 });
