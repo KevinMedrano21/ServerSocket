@@ -3,10 +3,6 @@ const server = net.createServer();
 
 let mensajes = [];
 
-// Establece el puerto y host del servidor directamente
-const PORT = process.env.PORT || 3000;
-//const HOST = process.env.HOST || '100.20.92.101'; // Cambia 'localhost' al host correcto si es diferente
-
 server.on('connection', (socket) => {
     socket.on('data', (data) => {
         const mensaje = data.toString('utf-8');
@@ -26,6 +22,6 @@ server.on('connection', (socket) => {
     });
 });
 
-server.listen(PORT, HOST, () => {
-    console.log('servidor escuchando en puerto', PORT);
+server.listen(3000, () => {
+    console.log('servidor escuchando en puerto', server.address().port);
 });
